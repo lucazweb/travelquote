@@ -8,6 +8,9 @@ export const theme: Theme = createTheme({
       main: purple[900],
     },
   },
+  typography: {
+    fontFamily: "Roboto",
+  },
   status: {
     danger: orange[200],
   },
