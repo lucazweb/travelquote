@@ -1,2 +1,8 @@
 import { Home } from "./pages";
-export const App = () => <Home />;
+import { ThemeProvider } from "./utils/theme-provider";
+
+export const App = () => (
+  <ThemeProvider>
+    <Home />
+  </ThemeProvider>
+);
