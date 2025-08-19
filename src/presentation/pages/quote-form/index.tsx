@@ -29,6 +29,7 @@ export const QuoteForm = () => {
             <FormControl fullWidth>
               <Autocomplete
                 id="origin-select-label"
+                data-testid="select-origin"
                 options={[]}
                 size="small"
                 renderInput={(params) => (
@@ -42,6 +43,7 @@ export const QuoteForm = () => {
             <NumberInput
               fullWidth
               size="small"
+              data-testid="going-ticket"
               id="outlined-basic"
               label="Ticked going price"
               type="number"
@@ -49,7 +51,7 @@ export const QuoteForm = () => {
             />
           </Grid>
           <Grid>
-            <StyledDatePicker label="Going date" />
+            <StyledDatePicker data-testid="going-date" label="Going date" />
           </Grid>
         </Grid>
         <Grid container marginTop={4} direction="column" size={3}>
@@ -68,6 +70,7 @@ export const QuoteForm = () => {
           <Grid>
             <NumberInput
               fullWidth
+              data-testid="back-ticket"
               size="small"
               id="outlined-basic"
               label="Ticked back price"
@@ -89,7 +92,7 @@ export const QuoteForm = () => {
       >
         <Grid justifyContent="center" container size={6}>
           <Grid container size={12} justifyContent="space-between">
-            <Grid alignContent="center">
+            <Grid alignContent="center" data-testid="food-expenses">
               <StyledWrapper>
                 <Fastfood />
                 <span>How much will spent with food?</span>
@@ -98,6 +101,7 @@ export const QuoteForm = () => {
             <Grid size={2}>
               <NumberInput
                 size="small"
+                data-testid="food-amount"
                 fullWidth
                 id="outlined-basic"
                 label="Amount"
@@ -107,7 +111,7 @@ export const QuoteForm = () => {
             </Grid>
           </Grid>
           <Grid container size={12} justifyContent="space-between">
-            <Grid alignContent="center">
+            <Grid alignContent="center" data-testid="mobility-expenses">
               <StyledWrapper>
                 <BiCar size={24} />
                 <span>How much will spent with mobility?</span>
@@ -124,7 +128,12 @@ export const QuoteForm = () => {
               />
             </Grid>
           </Grid>
-          <Grid container size={12} justifyContent="space-between">
+          <Grid
+            container
+            size={12}
+            justifyContent="space-between"
+            data-testid="leisure-expenses"
+          >
             <Grid alignContent="center">
               <StyledWrapper>
                 <BiBeer size={24} />
@@ -151,7 +160,11 @@ export const QuoteForm = () => {
         spacing={2}
         marginTop={4}
       >
-        <CircleButton size="large" variant="contained">
+        <CircleButton
+          size="large"
+          variant="contained"
+          data-testid="calculate-button"
+        >
           Calculate
         </CircleButton>
       </Grid>
