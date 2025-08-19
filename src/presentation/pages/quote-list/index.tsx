@@ -3,7 +3,6 @@ import { CircleButton, FullScreenLayout, Logo } from "../../components";
 import { FaPlane } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import { QuotesTable } from "../../components/quotes-table";
-import { format } from "date-fns";
 
 export const QuoteList = () => {
   const navigate = useNavigate();
