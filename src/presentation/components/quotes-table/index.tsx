@@ -28,10 +28,15 @@ export const QuotesTable = ({ data, onClickRow }: QuotesTableProps) => {
 
     const daily =
       duration * (foodExpenses + leisureExpenses + mobilityExpenses);
-
     const tickets = ticketBack + ticketGoing;
-
     return daily + tickets;
+  };
+
+  const formatCurrencyBRL = (value: number) => {
+    return new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(value);
   };
 
   return (
@@ -42,6 +47,8 @@ export const QuotesTable = ({ data, onClickRow }: QuotesTableProps) => {
             <TableCell>Directions</TableCell>
             <TableCell align="right">Travel date</TableCell>
             <TableCell align="right">Duration (days)</TableCell>
+            <TableCell align="right">Food (Total)</TableCell>
+            <TableCell align="right">Mobility (Total)</TableCell>
             <TableCell align="right">Total</TableCell>
           </TableRow>
         </TableHead>
@@ -74,11 +81,19 @@ export const QuotesTable = ({ data, onClickRow }: QuotesTableProps) => {
                   <span style={style}>{duration} days</span>
                 </Cell>
                 <Cell align="right" onClick={onClick}>
+                  <span style={style}>
+                    {formatCurrencyBRL(row.foodExpenses * duration)}
+                  </span>
+                </Cell>
+                <Cell align="right" onClick={onClick}>
+                  <span style={style}>
+                    {formatCurrencyBRL(row.mobilityExpenses * duration)}
+                  </span>
+                </Cell>
+
+                <Cell align="right" onClick={onClick}>
                   <span style={{ color: tint ? "white" : "#333" }}>
-                    {new Intl.NumberFormat("de-DE", {
-                      style: "currency",
-                      currency: "BRL",
-                    }).format(sum)}
+                    {formatCurrencyBRL(sum)}
                   </span>
                 </Cell>
               </TableRow>

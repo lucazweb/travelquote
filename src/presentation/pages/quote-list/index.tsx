@@ -19,6 +19,17 @@ export const QuoteList = () => {
       mobilityExpenses: 122,
       leisureExpenses: 90,
     },
+    {
+      origin: "São Paulo, SP",
+      destiny: "Belo Horizonte, BH",
+      ticketGoing: 132,
+      ticketBack: 133,
+      goingDate: new Date(2025, 8, 1).toISOString(),
+      backDate: new Date(2025, 8, 12).toISOString(),
+      foodExpenses: 200,
+      mobilityExpenses: 22,
+      leisureExpenses: 90,
+    },
   ];
 
   return (
