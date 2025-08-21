@@ -3,12 +3,14 @@ import { CircleButton, FullScreenLayout, Logo } from "../../components";
 import { FaPlane } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import { QuotesTable } from "../../components/quotes-table";
+import { useId } from "react";
 
 export const QuoteList = () => {
   const navigate = useNavigate();
-
+  const id = useId();
   const rows = [
     {
+      id,
       origin: "Salvador, BA",
       destiny: "Rio de Janeiro, RJ",
       ticketGoing: 332,
@@ -20,6 +22,7 @@ export const QuoteList = () => {
       leisureExpenses: 90,
     },
     {
+      id,
       origin: "São Paulo, SP",
       destiny: "Belo Horizonte, BH",
       ticketGoing: 132,
