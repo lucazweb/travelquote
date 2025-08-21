@@ -61,7 +61,12 @@ export const QuoteList = () => {
 
       <Grid container sx={{ justifyContent: "center" }} marginTop={3}>
         <Grid size={10} spacing={2}>
-          <QuotesTable data={rows} onClickRow={(row) => console.log(row)} />
+          <QuotesTable
+            data={rows}
+            onClickRow={(row) => {
+              navigate(`/detail/${row.id}`);
+            }}
+          />
         </Grid>
       </Grid>
     </FullScreenLayout>

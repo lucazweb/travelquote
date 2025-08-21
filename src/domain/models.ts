@@ -1,4 +1,5 @@
 export interface Quote {
+  id?: string;
   origin: string;
   destiny: string;
   ticketGoing: number;

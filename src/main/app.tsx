@@ -1,7 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import { Home } from "../presentation/pages";
-import { QuoteForm } from "../presentation/pages/quote-form";
-import { QuoteList } from "../presentation/pages/quote-list";
+import { Home, QuoteDetail, QuoteForm, QuoteList } from "@/presentation/pages";
 
 export const App = () => {
   return (
@@ -10,6 +8,7 @@ export const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/form" element={<QuoteForm />} />
         <Route path="/list" element={<QuoteList />} />
+        <Route path="/detail/:id" element={<QuoteDetail />} />
       </Routes>
     </BrowserRouter>
   );
